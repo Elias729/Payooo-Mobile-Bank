@@ -11,7 +11,7 @@ document.getElementById("login-button").addEventListener("click", (e) => {
     const pinValue = pinInput.value;
     pinInput.value = "";
     if (mobileNumberValue === mobileNumber && pinValue === pin) {
-        window.location.href = "../home.html";
+        window.location.href = "./home.html";
     } else {
         alert("Invalid mobile number or PIN");
     }
