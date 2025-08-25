@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PAYOO Mobile Banking</title>
     <!-- * CSS File Link -->
-    <link rel="stylesheet" href="styles/payoo.css">
+    <link rel="stylesheet" href="styles/style.css">
 
     <!--* Tailwind + DaisyUI CDN -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css" rel="stylesheet" type="text/css" />
@@ -24,14 +24,16 @@
         <div class="">
             <label for="" class="text-black text-xl">Mobile Number</label>
             <br>
-            <input type="text" placeholder="Type here" class="input mt-3 bg-[#f4f5f7] text-black rounded-4xl" />
+            <input type="text" id="mobile-number" placeholder="Type here"
+                class="input mt-3 bg-[#f4f5f7] text-black rounded-4xl" />
         </div>
         <div class="mt-5">
             <label for="" class="text-black text-xl">4 Digit Pin</label>
             <br>
-            <input type="text" placeholder="Type here" class="input mt-3 bg-[#f4f5f7] text-black rounded-4xl" />
+            <input type="text" id="pin" placeholder="Type here"
+                class="input mt-3 bg-[#f4f5f7] text-black rounded-4xl" />
         </div>
-        <button class="btn btn-primary text-white mt-5 w-full rounded-4xl">Login</button>
+        <button id="login-button" class="btn btn-primary text-white mt-5 w-full rounded-4xl">Login</button>
     </form>
 
     <!-- * JavaScript File Link -->
