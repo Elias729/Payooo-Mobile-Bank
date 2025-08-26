@@ -66,11 +66,44 @@ document.getElementById("withdraw-button")
 
 // ! Toggling Forms
 
+function handelToggling(id) {
+    const forms = document.getElementsByClassName("forms")
+    for (const form of forms) {
+        form.style.display = "none";
+    }
+    document.getElementById(id).style.display = "block";
+}
+
+function handelBtn(id) {
+    const formBtns = document.getElementsByClassName("form-btn");
+
+    for (const btn of formBtns) {
+        btn.classList.remove('border-blue-500', 'bg-blue-100', 'text-blue-500');
+        btn.classList.add('text-gray-500');
+    }
+
+    const addMoneyBtn = document.getElementById(id);
+    addMoneyBtn.classList.remove('text-gray-500');
+    addMoneyBtn.classList.add('border-blue-500', 'bg-blue-100', 'text-blue-500');
+}
+
 document.getElementById("add-money").addEventListener("click", () => {
-    document.getElementById("Cashout-form").style.display = "none";
-    document.getElementById("add-money-form").style.display = "block";
+    handelToggling("add-money-form");
+    handelBtn("add-money");
 })
 document.getElementById("cashout-button").addEventListener("click", () => {
-    document.getElementById("add-money-form").style.display = "none";
-    document.getElementById("Cashout-form").style.display = "block";
+    handelToggling("Cashout-form");
+    handelBtn("cashout-button");
+})
+document.getElementById("pay-now-button").addEventListener("click", () => {
+    handelToggling("transfer-form");
+    handelBtn("pay-now-button");
+})
+document.getElementById("get-bonus-button").addEventListener("click", () => {
+    handelToggling("get-bonus-form");
+    handelBtn("get-bonus-button");
+})
+document.getElementById("bill-button").addEventListener("click", () => {
+    handelToggling("pay-bill-form");
+    handelBtn("bill-button");
 })
