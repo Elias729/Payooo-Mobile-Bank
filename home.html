@@ -41,32 +41,32 @@
         </div>
 
         <div class="Card-container grid grid-cols-3 gap-4 p-4">
-            <div
+            <div id="add-money"
                 class="h-[90px] border-2 p-3 text-center rounded-xl flex flex-col items-center justify-center cursor-pointer">
                 <img src="./assets/wallet1.png" alt="wallet1" class="mx-auto">
                 <h1 class="text-[#666768] mt-2 font-medium">Add Money</h1>
             </div>
-            <div
+            <div id="cashout-button"
                 class="h-[90px] border-2 p-3 text-center rounded-xl flex flex-col items-center justify-center cursor-pointer">
                 <img src="./assets/send1.png" alt="send1" class="mx-auto">
                 <h1 class="text-[#666768] mt-2 font-medium">Cashout</h1>
             </div>
-            <div
+            <div id="pay-now-button"
                 class="h-[90px] border-2 p-3 text-center rounded-xl flex flex-col items-center justify-center cursor-pointer">
                 <img src="./assets/money1.png" alt="money1" class="mx-auto">
                 <h1 class="text-[#666768] mt-2 font-medium">Pay Now</h1>
             </div>
-            <div
+            <div id="get-bonus-button"
                 class="h-[90px] border-2 p-3 text-center rounded-xl flex flex-col items-center justify-center cursor-pointer">
                 <img src="./assets/bonus1.png" alt="wallet1" class="mx-auto">
                 <h1 class="text-[#666768] mt-2 font-medium">Get Bonus</h1>
             </div>
-            <div
+            <div id="pay-bill-button"
                 class="h-[90px] border-2 p-3 text-center rounded-xl flex flex-col items-center justify-center cursor-pointer">
                 <img src="./assets/purse1.png" alt="purse1" class="mx-auto">
                 <h1 class="text-[#666768] mt-2 font-medium">Pay Bill</h1>
             </div>
-            <div
+            <div id="transaction-button"
                 class="h-[90px] border-2 p-3 text-center rounded-xl flex flex-col items-center justify-center cursor-pointer">
                 <img src="./assets/transaction1.png" alt="transaction1" class="mx-auto">
                 <h1 class="text-[#666768] mt-2 font-medium">Transactions</h1>
@@ -74,15 +74,16 @@
         </div>
     </div>
 
-    <!-- *Add Money Section -->
+    <!-- *All Forms Section -->
     <div class="max-w-md m-auto p-4 mt-3">
-        <div>
+        <!--* Add Money Form -->
+        <div id="add-money-form">
             <h1 class="text-black font-bold text-2xl mb-2">Add Money</h1>
             <p class="text-[#666768]">Choose your preferred method to add money to your account.</p>
 
             <form action="" class="bg-white p-8 rounded-lg shadow-md w-md mt-5">
                 <div>
-                    <h1 class="text-black font-bold mb-2">Select A Bank</h1>
+                    <h1 class="text-black font-bold my-2">Select A Bank</h1>
                     <select id="bank-select"
                         class="select bg-[#f4f5f7] w-full border-none border-gray-300 rounded-full mb-2">
                         <option disabled selected>Select Bank</option>
@@ -94,22 +95,50 @@
                     </select>
                 </div>
                 <div>
-                    <h1 class="text-black font-bold mb-2">Bank Account Number</h1>
+                    <h1 class="text-black font-bold my-2">Bank Account Number</h1>
                     <input type="text" id="bank-account-number" placeholder="Enter 11 digit account number"
                         class="input mt-3 bg-[#f4f5f7] text-black w-full rounded-full" />
                 </div>
                 <div>
-                    <h1 class="text-black font-bold mb-2">Amount to Add</h1>
+                    <h1 class="text-black font-bold my-2">Amount to Add</h1>
                     <input type="text" id="amount-to-add" placeholder="Add Amount to withdraw"
                         class="input mt-3 bg-[#f4f5f7] text-black w-full rounded-full" />
                 </div>
                 <div>
-                    <h1 class="text-black font-bold mb-2">Pin Number</h1>
+                    <h1 class="text-black font-bold my-2">Pin Number</h1>
                     <input type="text" id="pin-number" placeholder="Enter 4 digit pin number"
                         class="input mt-3 bg-[#f4f5f7] text-black w-full rounded-full" />
                 </div>
                 <button id="add-money-button"
-                    class="btn bg-[#0874F2] hover:bg-[#0874F2] border-none text-white mt-5 w-full rounded-full">Login</button>
+                    class="btn bg-[#0874F2] hover:bg-[#0874F2] border-none text-white mt-5 w-full rounded-full">Add
+                    Money</button>
+            </form>
+        </div>
+
+        <!-- * Cashout Form -->
+        <div id="Cashout-form" style="display: none;">
+            <h1 class="text-black font-bold text-2xl mb-2">Cash Out</h1>
+            <p class="text-[#666768]">Choose your preferred method to cash out money from your account.</p>
+
+            <form action="" class="bg-white p-8 rounded-lg shadow-md w-md mt-5">
+                <div>
+                    <h1 class="text-black font-bold my-2">Agent Number</h1>
+                    <input type="text" id="agent-number" placeholder="Enter 11 digit agent number"
+                        class="input mt-3 bg-[#f4f5f7] text-black w-full rounded-full" />
+                </div>
+                <div>
+                    <h1 class="text-black font-bold my-2">Amount</h1>
+                    <input type="text" id="amount-withdraw" placeholder="Enter amount to withdraw"
+                        class="input mt-3 bg-[#f4f5f7] text-black w-full rounded-full" />
+                </div>
+                <div>
+                    <h1 class="text-black font-bold my-2">Pin Number</h1>
+                    <input type="text" id="pin-num" placeholder="Enter 4 digit pin number"
+                        class="input mt-3 bg-[#f4f5f7] text-black w-full rounded-full" />
+                </div>
+                <button id="withdraw-button"
+                    class="btn bg-[#0874F2] hover:bg-[#0874F2] border-none text-white mt-5 w-full rounded-full">Withdraw
+                    Money</button>
             </form>
         </div>
     </div>
