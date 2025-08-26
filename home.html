@@ -4,11 +4,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>PAYOO Mobile Banking</title>
+    <!-- * CSS File Link -->
+    <link rel="stylesheet" href="styles/style.css">
+
+    <!--* Tailwind + DaisyUI CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- * Remix Icons CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
 </head>
 
-<body>
-    <h1>This is home page</h1>
+<body class="bg-[#f4f5f7] h-[100vh] p-4">
+    <div class="flex justify-between items-center max-w-lg m-auto border-b border-gray-400 pb-5">
+        <div class="flex">
+            <img src="./assets/Group.png" alt="Group Img" class="h-[48px] w-[50px]" />
+            <div class="ml-2">
+                <h2 class="font-bold text-black">$ <Span>45000</Span></h2>
+                <p class="text-[#666768]">Available Balance</p>
+            </div>
+        </div>
+        <div>
+            <button class="btn bg-white hover:bg-white text-[#666768] border-none"><span><i
+                        class="ri-logout-circle-line"></i></span>Log Out</button>
+        </div>
+    </div>
 </body>
 
 </html>
