@@ -1,3 +1,5 @@
+const transactionData = [];
+
 document.getElementById("add-money-button")
     .addEventListener("click", (e) => {
         e.preventDefault();
@@ -27,6 +29,14 @@ document.getElementById("add-money-button")
         } else {
             alert("Invalid input. Please check your details and try again.");
         }
+
+        const data = {
+            name: "Add Money",
+            data: new Date().toLocaleDateString(),
+            time: new Date().toLocaleTimeString()
+        }
+        transactionData.push(data);
+
     });
 
 
@@ -58,9 +68,39 @@ document.getElementById("withdraw-button")
         } else {
             alert("Invalid input. Please check your details and try again.");
         }
+
+        const data = {
+            name: "Cash Out",
+            data: new Date().toLocaleDateString(),
+            time: new Date().toLocaleTimeString()
+        }
+        transactionData.push(data);
     })
 
 
+document.getElementById("transaction-button").addEventListener("click", (e) => {
+    e.preventDefault();
+    const transactionHistoryList = document.getElementById("transaction-history-list");
+     transactionHistoryList.innerHTML = "";
+    for (const data of transactionData) {
+        const div = document.createElement("div");
+        div.innerHTML = `
+                    <div class="bg-white p-5 rounded-lg shadow-md mt-5 flex justify-between items-center">
+                <div class="flex items-center gap-4 border-b border-gray-300 pb-3 mb-3">
+                    <div class="border-2 p-3 rounded-full  bg-gray-100">
+                        <img src="./assets/wallet1.png" alt="wallet1" class="mx-auto">
+                    </div>
+                    <div>
+                        <h1 class="mt-2 font-bold text-black">${data.name}</h1>
+                        <p class="text-gray-500">${data.data} ${data.time}</p>
+                    </div>
+                </div>
+                <i class="ri-more-2-fill"></i>
+            </div>
+                `
+        transactionHistoryList.appendChild(div);
+    }
+});
 
 
 
@@ -106,4 +146,8 @@ document.getElementById("get-bonus-button").addEventListener("click", () => {
 document.getElementById("bill-button").addEventListener("click", () => {
     handelToggling("pay-bill-form");
     handelBtn("bill-button");
+})
+document.getElementById("transaction-button").addEventListener("click", () => {
+    handelToggling("transaction-history-form");
+    handelBtn("transaction-button");
 })
